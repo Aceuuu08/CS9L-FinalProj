@@ -14,10 +14,7 @@ class Profile {
 
             $sql = "SELECT 
             employees.idemployees AS 'Employee ID', 
-            CONCAT(employees.first_name, ' ', employees.middle_name, ' ', employees.last_name) AS 'Employee Name', 
-            employees.sex AS 'Sex',
-            employees.email AS 'Email Address',
-            employees.contactno AS 'Phone Number',
+            CONCAT(employees.first_name, ' ', employees.middle_name, ' ', employees.last_name) AS 'Employee Name', employees.sex AS 'Sex', employees.email AS 'Email Address', employees.contactno AS 'Phone Number',
             CONCAT(employees.perm_spec_address, ' ', 
                    employees.perm_street_address, ' ', employees.perm_vill_address, ' ', 
                    employees.perm_barangay_address, ' ', employees.perm_city) AS 'Address'
@@ -39,9 +36,7 @@ class Profile {
         }
     }
 
-    public function update($userID, $fname, $mname, $lname, $sex, 
-    $emailAddress, $phoneNumber, $permSpecAddress, $permStreetAddress, 
-    $permVillAddress, $permBarangayAddress, $permCity)
+    public function update($userID, $fname, $mname, $lname, $sex, $emailAddress, $phoneNumber, $permSpecAddress, $permStreetAddress, $permVillAddress, $permBarangayAddress, $permCity)
 {
     try {
         $connection = $this->db->getConnection();
